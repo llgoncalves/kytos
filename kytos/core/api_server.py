@@ -141,6 +141,7 @@ class APIServer:
 
     def get_ui_components(self, filename):
         """Return all napps ui components."""
+        filename = '*' if filename == "all" else filename
         path = f"{self.napps_dir}/*/*/ui/{filename}/*.kytos"
         components = []
         for name in glob(path):
